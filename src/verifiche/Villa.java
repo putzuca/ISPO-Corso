@@ -15,7 +15,7 @@ public class Villa implements Edificio {
 
 	public static void main(String[] argc){
 
-		Edificio e = new Edificio();
+		Edificio e = new Edificio(); // errore
 		Villa v = new Villa();
 		Edificio e1 = new Villa();
 
