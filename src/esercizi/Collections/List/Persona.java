@@ -1,4 +1,4 @@
-package esercizi.Collections;
+package esercizi.Collections.List;
 
 public class Persona implements Comparable<Persona> {
 	private String nome;
@@ -21,6 +21,14 @@ public class Persona implements Comparable<Persona> {
 	public int compareTo(Persona p) {
 		return this.nome.compareTo(p.getNome());
 	}
+	
+	public int hashCode() {
+		return (this.nome.hashCode());
+	}
+	
+	public boolean equals(Object p) {
+		return this.nome.equals(((Persona)p).getNome());
+		}
 	
 
 }

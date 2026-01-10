@@ -1,4 +1,4 @@
-package esercizi.Collections;
+package esercizi.Collections.List;
 
 import static org.junit.Assert.*;
 
