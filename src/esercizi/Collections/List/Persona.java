@@ -23,11 +23,12 @@ public class Persona implements Comparable<Persona> {
 	}
 	
 	public int hashCode() {
-		return (this.nome.hashCode());
+		return (this.nome.hashCode() + this.eta);
 	}
 	
 	public boolean equals(Object p) {
-		return this.nome.equals(((Persona)p).getNome());
+		return (this.nome.equals(((Persona)p).getNome()))
+				&& this.eta == ((Persona) p).getEta();
 		}
 	
 
