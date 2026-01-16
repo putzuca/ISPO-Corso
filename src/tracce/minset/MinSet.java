@@ -23,8 +23,11 @@ public class MinSet<T extends Comparable<T>> extends Set<T> {
 	// rimuove una occorrenza di val da this, aggiornando il
 	// min in tutti i casi in cui sia necessario
 	public void remove(T val) {
-		super.remove(val);									// si potrebbe controllare prima di rimuovere con
-		if (min != null && this.min.compareTo(val) == 0) {  // boolean eraMin = (min != null && this.min.compareTo(val) == 0)
+		boolean eraMin = (min != null && this.min.compareTo(val) == 0);
+		
+		super.remove(val);
+		
+		if (eraMin) {
 			this.min = null;
 			Iterator<T> it = super.iterator();
 			if (it.hasNext())
@@ -36,4 +39,5 @@ public class MinSet<T extends Comparable<T>> extends Set<T> {
 			}	
 		}
 	}
+	// proviamo a scrivere una cosa a caso per vedere se si può
 }
