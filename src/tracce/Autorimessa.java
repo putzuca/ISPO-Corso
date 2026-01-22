@@ -15,7 +15,7 @@ public class Autorimessa {
 	}
 	
 	public void rimuovi(String unaTarga) {
-		if (this.cercaTarga(unaTarga) > -1)
+		if (this.cercaTarga(unaTarga) != -1)
 			this.box.remove(unaTarga);
 	}
 	

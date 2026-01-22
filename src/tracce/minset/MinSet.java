@@ -14,9 +14,7 @@ public class MinSet<T extends Comparable<T>> extends Set<T> {
 	// min nel caso il nuovo valore sia il nuovo minimo
 	public void add(T val) {
 		super.add(val);
-		if (this.min == null)
-			this.min = val;
-		else if (this.min.compareTo(val) > 0)
+		if (this.min == null || this.min.compareTo(val) > 0)
 			this.min = val;
 	}
 	
@@ -39,5 +37,4 @@ public class MinSet<T extends Comparable<T>> extends Set<T> {
 			}	
 		}
 	}
-	// proviamo a scrivere una cosa a caso per vedere se si può
 }
