@@ -3,3 +3,13 @@
 # File macOS
 .DS_Store
 **/.DS_Store
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+.Trashes
+.Spotlight-V100
+.fseventsd
