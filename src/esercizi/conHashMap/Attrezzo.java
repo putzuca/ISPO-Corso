@@ -16,5 +16,4 @@ public class Attrezzo {
 	public String getNome() {
 		return this.nome;
 	}
-
 }

@@ -1,8 +1,10 @@
 package esercizi.conHashMap;
 
-import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 
 public class Borsa {
@@ -23,7 +25,10 @@ public class Borsa {
 	
 	public int getPesoIterator() {
 		int pesoTotale = 0;
-		Iterator<Attrezzo> iteratore = this.attrezzi.iterator();
+		Collection<Attrezzo> c = this.attrezziInBorsa();
+		Set<Attrezzo> s = new HashSet<Attrezzo>();
+		s.addAll(c);
+		Iterator<Attrezzo> iteratore = s.iterator();
 		while (iteratore.hasNext()) {
 			Attrezzo a;
 			a = iteratore.next();
@@ -34,7 +39,10 @@ public class Borsa {
 	
 	public Attrezzo removeAttrezzo(String nomeAttrezzo) {
 		Attrezzo a = null;
-		Iterator<Attrezzo> iteratore = this.attrezzi.iterator();
+		Collection<Attrezzo> c = this.attrezziInBorsa();
+		Set<Attrezzo> s = new HashSet<Attrezzo>();
+		s.addAll(c);
+		Iterator<Attrezzo> iteratore = s.iterator();
 		while (iteratore.hasNext()) {
 			a = iteratore.next();
 			if (a.getNome().equals(nomeAttrezzo)) {
@@ -45,10 +53,17 @@ public class Borsa {
 		return null;
 	}
 	
+	public Collection<Attrezzo> attrezziInBorsa() {
+		return this.attrezzi.values();
+	}
+	
 	public int getPesoForEach() {
 		int pesoTotale = 0;
-		for(Attrezzo a : this.attrezzi)
-			pesoTotale += a.getPeso();
+		Collection<Attrezzo> c = this.attrezziInBorsa();
+		Set<Attrezzo> s = new HashSet<Attrezzo>();
+		s.addAll(c);
+		for(Attrezzo e : s)
+			pesoTotale += e.getPeso();
 		return pesoTotale;
 	}
 }
